@@ -1,6 +1,4 @@
-import sys
-sys.path.append("..")
-from model.base import BASE
+from .base import BASE
 from sqlalchemy import Integer, VARCHAR, Boolean, TIMESTAMP, Column
 
 
@@ -15,4 +13,5 @@ class FootballLeague(BASE):
     country_id = Column(Integer, nullable = False)
     country_name = Column(VARCHAR(50), nullable=False)
     country_short = Column(VARCHAR(50), nullable=False)
+    insert_date = Column(TIMESTAMP, nullable=False)
 

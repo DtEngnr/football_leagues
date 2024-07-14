@@ -5,8 +5,6 @@ def test():
     endpoint = '/leagues'
     include = "country"
 
-    
-    print("List of Football Leagues:")
     leagues = []
      
     URL = f"{BASE_URL}{endpoint}?api_token={API_TOKEN}&include={include}"
@@ -25,6 +23,7 @@ def test():
                 'country_iso2': league['country']['iso2']
             }
             leagues.append(league_info)
+        return leagues
     else:
         print(f"Failed to retrieve data. Status code:", response.status_code)
-    return leagues
+    
